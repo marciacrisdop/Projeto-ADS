@@ -1,0 +1,40 @@
+<?php
+    require("conecta.php"); // Inclui o arquivo de conexão com o banco de dados
+
+    // Verifica se todos os campos necessários foram enviados via POST
+    if(isset($_POST['id'], $_POST['nome'], $_POST['re'], $_POST['placa'], $_POST['datahora'], $_POST['tipo'], $_POST['finalidade'], $_POST['especificacao'], $_POST['descricao'])) {
+        
+        // Obtém os valores enviados via POST
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $re =  $_POST['re'];
+        $placa = $_POST['placa'];
+        $datahora = $_POST['datahora'];
+        $tipo = $_POST['tipo'];
+        $finalidade = $_POST['finalidade'];
+        $especificacao = $_POST['especificacao'];
+        $descricao = $_POST['descricao'];
+
+        // Monta a consulta SQL para atualizar os dados do veículo
+        $sql_update = "UPDATE veiculo SET 
+                       nome = '$nome', 
+                       re = '$re', 
+                       placa = '$placa', 
+                       datahora = '$datahora', 
+                       tipo = '$tipo', 
+                       finalidade = '$finalidade', 
+                       especificacao = '$especificacao', 
+                       descricao = '$descricao' 
+                       WHERE id = $id";
+
+        // Executa a consulta SQL
+        if ($conn->query($sql_update) === TRUE) {
+            echo "<center><h3>Veículo atualizado com sucesso.</h3></center>";
+        } else {
+            echo "<center><h3>Ocorreu um erro ao atualizar o veículo: " . $conn->error . "</h3></center>";
+        }
+
+    } else {
+        echo "<h3>Por favor, preencha todos os campos do formulário.</h3>";
+    }
+?>

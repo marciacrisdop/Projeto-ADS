@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+    <head>
+        <!-- Metadados -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-widtch, initial-scale=1, shrink-to-fit=no">
+
+         <!-- CSS -->          
+         <link rel="stylesheet" type="text/css" href="cadastroveiculo.css" media="screen"> 
+
+         <!-- Título da página (aparece na aba) -->
+         <title>Cadastro</title>
+
+    </head>
+
+    <body>
+
+        <!-- Cabeçalho com título e sibtítulo (ambos com css de id "título") -->
+        <div>
+            <h1 id="titulo">Cadastro de Veículos</h1>
+            <p id="subtitulo">Preencha os campos com as informações requisitadas</p>
+            <br>
+        </div>
+
+        <!-- Início do formulário -->
+        <form method="POST" action="cadastrar_veiculo.php"> 
+            
+            <fieldset class="grupo">
+                <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
+                <div class="campo">
+                    <label for="nome"><strong>Nome Completo</strong></label>
+                    <input type="text" name="nome" id="nome" required>
+                </div>
+
+                <!-- Campo do re com legenda "re" e css de classe "campo" -->
+                <div class="campo">
+                    <label for="re"><strong>RE</strong></label>
+                    <input type="text" name="re" id="re" required>
+                </div>
+            </fieldset>
+            
+            
+            <!-- Campo de "placa" com -->
+            <div class="campo">
+                <label for="placa"><strong>Placa</strong></label>
+                <input type="text" name="placa" id="placa" required>
+            </div> 
+
+            <!-- Campo de data e hora -->
+            <div class="campo">
+                <label for="datahora"><strong>Data/Hora Entrada:</strong></label>
+                <input type="datetime-local" name="datahora" id="datahora"  required>
+            </div>
+            
+
+            <!-- Campo de desenvolvimento web com 7 opções de botões selecionáveis (radio button e css de classe) -->
+            <div class="campo">
+                <label><strong>Qual o tipo de veículo?</strong></label>
+                <label>
+                    <input type="radio" name="tipo" value="automovel" checked>Automóvel 
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="motocicleta">Motocicleta 
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="onibus">Ônibus 
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="microonibus">Micro-onibus 
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="caminhão">Caminhão 
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="basemóvel">Base Móvel 
+                </label>
+                <label>
+                    <input type="radio" name="tipo" value="outro">Outros 
+                </label>
+            </div>
+
+            <!-- Campo de finalidade com 5 opções para escolha (select option) e css de "campo" -->
+            <div class="campo">
+                <label for="finalidade"><strong>Finalidade</strong></label>
+                <select id="finalidade" name="finalidade" required>
+                    <option selected disabled value="">Selecione</option>
+                    <option>Administrativo</option>
+                    <option>Serviço de Guarda</option>
+                    <option>Cursos</option>
+                    <option>Eventos</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+            <fieldset class="grupo">
+                <div id="check">
+                    <label><strong>Selecione a especificação:</strong></label><br><br>
+                    <input type="checkbox" id="especificacao1" name="especificacao" value="Oficial">
+                    <label for="especificacao1"> Oficial</label>
+                    <input type="checkbox" id="especificacao2" name="especificacao" value="Praça">
+                    <label for="especificacao2"> Praça</label>
+                    <input type="checkbox" id="especificacao3" name="especificacao" value="Aluno">
+                    <label for="especificacao3"> Aluno</label>
+                    <input type="checkbox" id="especificacao4" name="especificacao" value="FuncionarioCivil">
+                    <label for="especificacao4"> Funcionário Civil</label>
+                    <input type="checkbox" id="especificacao5" name="especificacao" value="Inativo">
+                    <label for="especificacao5"> Inativo</label>
+                    <input type="checkbox" id="especificacao6" name="especificacao" value="Visitante">
+                    <label for="especificacao6"> Visitante</label>                    
+                    <input type="checkbox" id="especificacao7" name="especificacao" value="Outros">
+                    <label for="especificacao7"> Outros</label>
+                </div>
+            </fieldset>
+            
+            <!-- Caixa de texto -->
+            <div class="campo">
+                <br>
+                <label for="descricao"><strong>Justificar as opções "outros" e adicione observações complementares: </strong></label>
+                <textarea rows="5" style="width: 40em" id="descricao" name="descricao"></textarea>
+            </div>
+            
+            <!-- Botão para enviar o formulário -->
+            <!--<button class="botao" type="submit" onsubmit="">Concluído</button> -->
+            
+
+            <button class="botao" type="submit">Concluído</button>
+
+        </form>
+
+    </body>
+
+</html>
